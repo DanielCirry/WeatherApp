@@ -1,0 +1,33 @@
+﻿@model List<ResponseModel>
+@{
+    Layout = null;
+}
+<div class="card-container container d-flex justify-content-center col col-lg-4">
+    @{
+        if (Model != null)
+        {
+            foreach (var weather in Model)
+            {
+                <div class=" container d-flex justify-content-center col col-lg-4 w-100 pb-3">
+                    <div class="card w-100">
+                    <div class="card-body flex-fill">
+                            <h5 class="card-title">@weather.Location</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Temperature: @weather.Temp°C</h6>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Feels Like: @weather.Feels_Like°C</li>
+                            <li class="list-group-item">Min Temperature: @weather.Min_Temp°C</li>
+                            <li class="list-group-item">Max Temperature: @weather.Max_Temp°C</li>
+                            <li class="list-group-item">Humidity: @weather.Humidity</li>
+                            <li class="list-group-item">Wind Speed: @weather.Wind_Speed Km/h</li>
+                            <li class="list-group-item">Wind Degrees: @weather.Wind_Degrees</li>
+                            <li class="list-group-item">Sunrise: @weather.SunriseDateTime</li>
+                            <li class="list-group-item">Sunset: @weather.SunsetDateTime</li>
+                            <li class="list-group-item">Cloud Pct: @weather.Cloud_Pct</li>
+                        </ul>
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>
